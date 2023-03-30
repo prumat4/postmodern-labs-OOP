@@ -2,12 +2,11 @@
 
 int main()
 {
-    State *state = new ConcreteStateA();
-    Character character(state);
-
+    State *state = new CoolingState();
+    Character character;
     character.show();
-    character.request();
-    character.show();
+    character.addState(state);
 
+    delete state;
     return 0;
 }

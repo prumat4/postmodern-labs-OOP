@@ -3,15 +3,22 @@
 #ifndef STATES_HPP
 #define STATES_HPP
 
-class ConcreteStateA : public State
+class CoolingState : public State
 {
-public:
-    void handle(Character *) override;
+    void handle(Character *character) override
+    {
+        character->changeTemperature(-1);
+        std::cout << "entered colling state\n";
+    }
 };
 
-void ConcreteStateA::handle(Character *character)
+class WarmingState : public State
 {
-    character->changeSpeed(-5);
-}
+    void handle(Character *character) override 
+    {
+        character->changeTemperature(1);
+        std::cout << "entered warming state\n";
+    }
+};
 
 #endif
