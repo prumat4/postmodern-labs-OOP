@@ -2,11 +2,12 @@
 
 int main()
 {
-    State *state = new CoolingState();
-    Character character;
-    character.show();
-    character.addState(state);
+    State *state = new GreenState();
+    TrafficSignal sv;
+    sv.show();
 
-    delete state;
+    sv.setState(state);
+    sv.show();
+
     return 0;
 }

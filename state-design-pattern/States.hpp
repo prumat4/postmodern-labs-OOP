@@ -3,22 +3,63 @@
 #ifndef STATES_HPP
 #define STATES_HPP
 
-class CoolingState : public State
+class GreenState : public State
 {
-    void handle(Character *character) override
+    void handle(TrafficSignal *character) override
     {
-        character->changeTemperature(-1);
-        std::cout << "entered colling state\n";
+        character->setStatus(GREEN);
     }
 };
 
-class WarmingState : public State
+class BlinkingGreenState : public State
 {
-    void handle(Character *character) override 
+    void handle(TrafficSignal *character) override 
     {
-        character->changeTemperature(1);
-        std::cout << "entered warming state\n";
+        character->setStatus(BLINKING_GREEN);
+
     }
 };
+
+class YellowRedState : public State
+{
+    void handle(TrafficSignal *character) override
+    {
+        character->setStatus(YELLOW_RED);
+    }
+};
+
+class BlinkingYellowState : public State
+{
+    void handle(TrafficSignal *character) override
+    {
+        character->setStatus(BLINKING_YELLOW);
+    }
+};
+
+class YellowState : public State
+{
+    void handle(TrafficSignal *character) override
+    {
+        character->setStatus(YELLOW);
+    }
+};
+
+class RedState : public State
+{
+    void handle(TrafficSignal *character) override
+    {
+        character->setStatus(RED);
+    }
+};
+
+class OffState : public State
+{
+    void handle(TrafficSignal *character) override
+    {
+        character->setStatus(OFF);
+    }
+};
+
+
 
 #endif
