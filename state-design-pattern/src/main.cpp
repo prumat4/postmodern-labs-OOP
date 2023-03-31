@@ -1,6 +1,6 @@
 #include "States.hpp"
 
-void setAndShow(TrafficSignal &ts, State *state)
+void setAndShow(TrafficLight &ts, State *state)
 {
     ts.setState(state);
     ts.show();
@@ -8,7 +8,7 @@ void setAndShow(TrafficSignal &ts, State *state)
 
 void clientCode()
 {
-    TrafficSignal ts;
+    TrafficLight ts;
     ts.show();
 
     State *state = new RedState;
@@ -34,5 +34,6 @@ void clientCode()
 int main()
 {
     clientCode();
+    
     return 0;
 }
