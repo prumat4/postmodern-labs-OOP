@@ -1,4 +1,4 @@
-#include "Character.hpp"
+#include "TrafficSignal.hpp"
 
 #ifndef STATES_HPP
 #define STATES_HPP
@@ -16,7 +16,6 @@ class BlinkingGreenState : public State
     void handle(TrafficSignal *character) override 
     {
         character->setStatus(BLINKING_GREEN);
-
     }
 };
 
@@ -59,7 +58,5 @@ class OffState : public State
         character->setStatus(OFF);
     }
 };
-
-
 
 #endif
