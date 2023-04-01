@@ -26,10 +26,11 @@ class TrafficLight
 private:
     uint8_t lightStatus:4;
     State *state;
+    
     void request();
 public:
     TrafficLight() : lightStatus(OFF), state(nullptr) {}
-    TrafficLight(State *state);
+    TrafficLight(State *);
     ~TrafficLight() { delete state; }
 
     uint8_t getLightStatus() { return lightStatus; };
@@ -37,7 +38,7 @@ public:
     
     void show();
     void setState(State *);
-    void setLightStatus(uint8_t var);
+    void setLightStatus(uint8_t);
 };
 
 TrafficLight::TrafficLight(State *state)
