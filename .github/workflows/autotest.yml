@@ -17,7 +17,6 @@ jobs:
         cd /usr/src/gtest
         sudo cmake CMakeLists.txt
         sudo make
-        sudo make install
     - name: Build tests
       run: |
         g++ -std=c++20 test/test.cpp -lgtest -lgtest_main -lgmock -lgmock_main -o test
