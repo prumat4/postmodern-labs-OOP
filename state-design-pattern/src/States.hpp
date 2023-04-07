@@ -3,7 +3,7 @@
 #ifndef STATES_HPP
 #define STATES_HPP
 
-class GreenState : public State
+class GreenState : public StateInterface
 {
     void handle(TrafficLight *character) override
     {
@@ -11,7 +11,7 @@ class GreenState : public State
     }
 };
 
-class BlinkingGreenState : public State
+class BlinkingGreenState : public StateInterface
 {
     void handle(TrafficLight *character) override 
     {
@@ -19,7 +19,7 @@ class BlinkingGreenState : public State
     }
 };
 
-class YellowRedState : public State
+class YellowRedState : public StateInterface
 {
     void handle(TrafficLight *character) override
     {
@@ -27,7 +27,7 @@ class YellowRedState : public State
     }
 };
 
-class BlinkingYellowState : public State
+class BlinkingYellowState : public StateInterface
 {
     void handle(TrafficLight *character) override
     {
@@ -35,7 +35,7 @@ class BlinkingYellowState : public State
     }
 };
 
-class YellowState : public State
+class YellowState : public StateInterface
 {
     void handle(TrafficLight *character) override
     {
@@ -43,7 +43,7 @@ class YellowState : public State
     }
 };
 
-class RedState : public State
+class RedState : public StateInterface
 {
     void handle(TrafficLight *character) override
     {
@@ -51,7 +51,7 @@ class RedState : public State
     }
 };
 
-class OffState : public State
+class OffState : public StateInterface
 {
     void handle(TrafficLight *character) override
     {

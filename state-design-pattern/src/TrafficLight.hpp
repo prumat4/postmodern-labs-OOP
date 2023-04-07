@@ -15,7 +15,7 @@
 
 class TrafficLight;
 
-class State
+class StateInterface
 {
 public:
     virtual void handle(TrafficLight *) = 0;
@@ -25,25 +25,25 @@ class TrafficLight
 {
 private:
     uint8_t lightStatus:4;
-    State *state;
+    StateInterface *state;
     
     void request();
 public:
     TrafficLight() : lightStatus(OFF), state(nullptr) {}
-    TrafficLight(State *);
+    TrafficLight(StateInterface *);
     ~TrafficLight() { delete state; }
 
     uint8_t getLightStatus() { return lightStatus; };
-    State* getState() { return state; }
+    StateInterface* getState() { return state; }
     
     void show();
-    void setState(State *);
+    void setState(StateInterface *);
     void setLightStatus(uint8_t);
 };
 
-TrafficLight::TrafficLight(State *state)
+TrafficLight::TrafficLight(StateInterface *state)
 {
-    setState(state);
+    this->state = state;
     lightStatus = OFF;
     request();
 }
@@ -53,7 +53,7 @@ void TrafficLight::request()
     state->handle(this);
 }
 
-void TrafficLight::setState(State *state)
+void TrafficLight::setState(StateInterface *state)
 {
     if(this->state != nullptr)
         delete this->state;
