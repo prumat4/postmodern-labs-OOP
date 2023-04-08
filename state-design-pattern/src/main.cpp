@@ -1,6 +1,6 @@
 #include "States.hpp"
 
-void setAndShow(TrafficLight &ts, State *state)
+void setAndShow(TrafficLight &ts, StateInterface *state)
 {
     ts.setState(state);
     ts.show();
@@ -11,7 +11,7 @@ void clientCode()
     TrafficLight ts;
     ts.show();
 
-    State *state = new RedState;
+    StateInterface *state = new RedState;
     setAndShow(ts, state);
 
     state = new YellowRedState;
