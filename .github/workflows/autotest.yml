@@ -19,7 +19,7 @@ jobs:
         sudo make
     - name: Build tests
       run: |
-        g++ -std=c++20 test.cpp -lgtest -lgtest_main -lgmock -lgmock_main -o test
+        g++ -std=c++20 state-design-pattern/test/test.cpp -lgtest -lgtest_main -lgmock -lgmock_main -o test
     - name: Run tests
       run: |
         ./tests
