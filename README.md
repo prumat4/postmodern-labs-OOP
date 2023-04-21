@@ -1,6 +1,4 @@
-# Postmodern technologies in software developement labs (part 1)
-
-## Lab1: State design pattern (on traffic light example)
+## State design pattern (on traffic light example)
 
 This project implements the State design pattern for a traffic light simulation. The project has the following files:
 
